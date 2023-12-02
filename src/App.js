@@ -1,23 +1,19 @@
-import logo from './logo.svg';
-import './App.css';
+// src/App.js
+import React, { useState } from 'react';
+import ResumeForm from './ResumeForm';
+import ResumeDisplay from './ResumeDisplay';
 
 function App() {
+  const [resumeData, setResumeData] = useState(null);
+
+  const handleFormSubmit = (formData) => {
+    setResumeData(formData);
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <ResumeForm onSubmit={handleFormSubmit} />
+      {resumeData && <ResumeDisplay data={resumeData} />}
     </div>
   );
 }
