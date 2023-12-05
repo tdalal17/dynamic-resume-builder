@@ -5,16 +5,10 @@ import Body from "./components/Body/Body";
 import "./App.css";
 
 function App() {
-  const [resumeData, setResumeData] = useState(null);
-
-  const handleFormSubmit = (formData) => {
-    setResumeData(formData);
-  };
-
   return (
-    <div>
-      <ResumeForm onSubmit={handleFormSubmit} />
-      {resumeData && <ResumeDisplay data={resumeData} />}
+    <div className="App">
+      <Header />
+      <Body />
     </div>
   );
 }
