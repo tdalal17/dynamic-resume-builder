@@ -1,7 +1,8 @@
 // src/App.js
 import React, { useState } from 'react';
-import ResumeForm from './ResumeForm';
-import ResumeDisplay from './ResumeDisplay';
+import Header from "./components/Header/Header";
+import Body from "./components/Body/Body";
+import "./App.css";
 
 function App() {
   const [resumeData, setResumeData] = useState(null);
